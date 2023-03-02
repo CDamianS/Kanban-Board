@@ -69,6 +69,7 @@ func New() *Model {
 func (m *Model) MovetoNext() tea.Msg {
 	selectedItem := m.lists[m.focused].SelectedItem()
 	selectedTask := selectedItem.(Task)
+	// hola
 	m.lists[selectedTask.status].RemoveItem(m.lists[m.focused].Index())
 	selectedTask.Next()
 	m.lists[selectedTask.status].InsertItem(len(m.lists[selectedTask.status].Items())-1, list.Item(selectedTask))
